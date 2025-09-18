@@ -1,0 +1,12 @@
+# Backend
+backend/node_modules
+backend/.env
+
+# Frontend
+frontent/node_modules
+frontent/.env.local
+
+# Common
+.DS_Store
+dist
+build
