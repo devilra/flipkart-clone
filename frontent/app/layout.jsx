@@ -1,14 +1,21 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Farro } from "next/font/google";
 import "./globals.css";
+import ClientProviders from "./ClientProviders";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
+
+const farro = Farro({
+  variable: "--font-farro-mono",
   subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata = {
@@ -19,10 +26,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${farro.variable} antialiased`}>
+        <ClientProviders>{children}</ClientProviders>
       </body>
     </html>
   );
